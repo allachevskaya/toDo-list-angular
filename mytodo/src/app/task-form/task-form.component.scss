@@ -1,0 +1,23 @@
+.input{
+  display: flex;
+  justify-content:center;
+  margin: 5px auto;
+}
+
+.input-task{
+  border: 2px solid aquamarine;
+  background-color: rgba(8, 8, 8, 0.384);
+
+  width: 50%;
+  color:rgba(127, 255, 212, 0.884);
+  font-size: 18px;
+  border-bottom-left-radius: 7px;
+  
+  }
+
+  .btn{
+  background-color:aquamarine;
+  color: black;
+  padding:  5px 12px;
+  border-bottom-right-radius: 7px;
+  }

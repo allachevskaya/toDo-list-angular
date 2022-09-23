@@ -1,0 +1,74 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  font-family: 'Roboto';
+  font-size: 1rem;
+  line-height: 1.6;
+ 
+  
+
+}
+
+.container{
+  max-width: 1000px;
+  margin: 0 auto;
+  padding-top: 1rem;
+  border: #333 2PX solid ;
+  background-color: #333;
+  color:#ccc;
+  
+}
+
+.btn{
+  background-color: aquamarine;
+  border-radius: 2px;
+  color:#ccc;
+  padding: 15px;
+  font-size: 15px;
+}
+.btn:hover{
+  opacity: 0.8;
+}
+
+.form-control{
+  display: block;
+  margin-top: 0.3rem;
+}
+
+.card{
+  padding: 1rem;
+  border: #ccc 1px dotted;
+  margin: 0.7rem 0;
+}
+
+input,
+select,
+textarea{
+  display: block;
+  width: 100%;
+  padding: 0.4rem;
+  font-size: 1.2rem;
+  border: 1px solid #ccc;
+  margin: 1.2rem 0;
+}
+
+hr{
+  margin: 12px;
+}
+
+
+/*my*/
+.title{
+  color:aquamarine;
+  text-align: center;
+  
+}
+

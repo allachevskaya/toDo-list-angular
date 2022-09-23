@@ -1,0 +1,14 @@
+
+<div class="container">
+  <h1 class="title">Hello</h1>
+
+  <app-task-form 
+  (onTask)="updateTask($event)"
+  ></app-task-form>
+
+  <app-task
+  *ngFor="let item of tasks"
+  [task]="item"  ></app-task>
+
+</div>
+
