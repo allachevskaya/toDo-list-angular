@@ -22,6 +22,7 @@ export class TaskFormComponent implements OnInit {
       const task:Task = {
         title: this.title
       }
+      
       this.onTask.emit(task) // отправили 
     }
     this.title = ''

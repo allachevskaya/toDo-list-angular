@@ -8,7 +8,8 @@
 
   <app-task
   *ngFor="let item of tasks"
-  [task]="item"  ></app-task>
+  [task]="item"  
+  (onRemove)="removeTask($event)"></app-task>
 
 </div>
 
