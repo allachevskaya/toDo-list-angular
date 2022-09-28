@@ -1,6 +1,6 @@
 
 <div class="container">
-  <h1 class="title">Hello</h1>
+  <h1 class="title">To Do list</h1>
 
   <app-task-form 
   (onTask)="updateTask($event)"
@@ -9,7 +9,9 @@
   <app-task
   *ngFor="let item of tasks"
   [task]="item"  
-  (onRemove)="removeTask($event)"></app-task>
+  
+  (onRemove)="removeTask($event)"
+  (onEdit)="editTask($event)"></app-task>
 
 </div>
 

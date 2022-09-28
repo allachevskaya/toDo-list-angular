@@ -6,17 +6,23 @@ import { AppComponent } from './app.component';
 import { TaskComponent } from './task/task.component';
 import { TaskFormComponent } from './task-form/task-form.component';
 import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { EditTaskComponent } from './edit-task/edit-task.component';
+import{MatDialogModule} from '@angular/material/dialog'
 
 @NgModule({
   declarations: [
     AppComponent,
     TaskComponent,
-    TaskFormComponent
+    TaskFormComponent,
+    EditTaskComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule // в первую очередь
+    FormsModule,
+    BrowserAnimationsModule, // в первую очередь
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

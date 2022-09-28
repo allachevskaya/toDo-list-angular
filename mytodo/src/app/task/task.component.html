@@ -1,5 +1,9 @@
 <div class="card">
-  <p><span>	&#9998;</span> {{task.title}}
-    <span class="btn" (click)="removeTask()">del</span>
+  <p>
+    <span class="btn-done" (click)="removeTask()">	&#9055; </span>
+     {{task.title}}
+
+    <span class="btn" (click)="removeTask()">&#10006;</span>
+    <span class="btn"(click)="editTask()">&#9998;</span>
   </p>
 </div>

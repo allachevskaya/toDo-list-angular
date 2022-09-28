@@ -1,0 +1,25 @@
+<h1>Edit todo</h1>
+
+<div mat-dialog-content>
+
+  <form #form="ngForm" (ngSumbit)="onFormSubmit(form)">
+    <div class="field">
+      <div class="control">
+        <input type="text" class="input" placeholder="enter text">
+      </div>
+    </div>
+
+    <br>
+
+    <div class="field is-field is-grouped-right">
+      <div class="control">
+        <button type="button" class="btn is-light" (click)="close()">Cancel</button>
+      </div>
+
+      <div class="control">
+        <button  type="submit" class="btn is-light">Save</button>
+      </div>
+    </div>
+  </form>
+
+</div>

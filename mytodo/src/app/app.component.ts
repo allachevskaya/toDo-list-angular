@@ -21,4 +21,11 @@ export class AppComponent {
   removeTask(id: number) {
     this.tasks = this.tasks.filter(item => item.id != id)
   }
+  
+  editTask(task: Task){
+    console.log(task)
+    const index = this.tasks.indexOf(task)
+    console.log(index)
+    //2^34
+  }
 }

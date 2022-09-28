@@ -3,10 +3,8 @@
   border: #ccc 1px dotted;
   margin: 0.7rem 0;
   width: 90%;
-  margin: 8px auto;
-  span{
-    color:aquamarine
-  }
+  margin: 20px auto;
+  
   p{
     font-size: 18px;
     letter-spacing: 1px;
@@ -17,6 +15,15 @@
     padding:  2px 12px;
     border-bottom-right-radius: 7px;
     float: right;
+    margin: 0 10px;
+   background-color:aquamarine
+    }
+    .btn-done{
+      font-size: 20px;
+    }
+    .btn-done:hover{
+      color:aquamarine;
+      font-size: 22px;
     }
 }
 
