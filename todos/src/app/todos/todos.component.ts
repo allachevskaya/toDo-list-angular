@@ -28,7 +28,7 @@ export class TodosComponent implements OnInit {
 
   }
   
-  toggleComplited(todo: Todo){
+  togglecompleted(todo: Todo){
     todo.completed = !todo.completed
   }
 
