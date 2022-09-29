@@ -1,6 +1,6 @@
 <section class="heading-section">
   <h1 class="title is-1 has-text-centered">Todos</h1>
-  <h1>1.28</h1>
+  <h1>2.12</h1>
 
 </section>
 
@@ -25,9 +25,9 @@
           </button>
         </p>
       </div>
-      <div *ngIf="todoTextField.errors">
-        <p class="help is-danger" *ngIf="todoTextField.errors?.['required']" >Todo text  must not be empty</p>
-        <p class="help is-danger" *ngIf="todoTextField.errors?.['minlength']">Todo text  must not be lenght 3</p>
+      <div *ngIf="todoTextField.errors && showValidationErrors == true">
+        <p class="help is-danger" *ngIf="todoTextField.errors?.['required']" >Поле не должно быть пустым</p>
+        <p class="help is-danger" *ngIf="todoTextField.errors?.['minlength']">Задача должна быть длиннее чем 3 символа</p>
       </div>
       
     </form>
@@ -38,33 +38,12 @@
   <div class="container">
     <div class="todos-list">
 
-      <div class="todo-item " *ngFor="let todo of todos" [class.complited]="todo.completed">
-        <div class="check-box">
-          <i class="material-icons">check</i>
-        </div>
-        <div class="todo-text">
-          {{todo.text}}
-        </div>
-        <div class="todo-control-button">
-          <i class="material-icons">edit</i>
-          <i class="material-icons">delete</i>
-        </div>
+      <app-todo-item
+       *ngFor="let todo of todos" 
+      [task]='todo'
+      (todoClicked)="toggleComplited(todo)"
+      ></app-todo-item>
 
-      </div>
-      <!-- <div class="todo-item">
-        <div class="check-box">
-          <i class="material-icons">check</i>
-        </div>
-          <div class="todo-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, officiis neque modi reiciendis dolores cum ab, assumenda nobis, voluptatum ipsam nesciunt repellat hic vel exercitationem optio omnis cumque voluptatibus odit.
-          </div>
-          <div class="todo-controls-box">
-            <div class="todo-control-button">
-              <i class="material-icons">edit</i>
-              <i class="material-icons">delete</i>
-            </div>
-          </div>
-        
-      </div> -->
 
     </div>
   </div>

@@ -1,0 +1,16 @@
+<div class="todo-item " 
+[class.complited]="task.completed"
+(click)="onClickTodo()"
+>
+  <div class="check-box">
+    <i class="material-icons">check</i>
+  </div>
+  <div class="todo-text">
+    {{task.text}}
+  </div>
+  <div class="todo-control-button">
+    <i class="material-icons">edit</i>
+    <i class="material-icons">delete</i>
+  </div>
+
+</div>

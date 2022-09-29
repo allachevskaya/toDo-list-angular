@@ -11,20 +11,25 @@ import { Todo } from '../shared/todo.modul';
   styleUrls: ['./todos.component.scss']
 })
 export class TodosComponent implements OnInit {
-  todos:Todo[]=[]
+  todos: Todo[] = []
+  showValidationErrors: boolean = false
 
   constructor(private dataServise: DataService) { }
 
   ngOnInit(): void {
     this.todos = this.dataServise.getAllTodos()
   }
-  onFormSubmit(form:NgForm){
-    if(form.valid){
+  onFormSubmit(form: NgForm) {
+    if (form.valid) {
       this.dataServise.addTodo(new Todo(form.value.text))
-    }else console.log(form)
-    // if(form.invalid) return alert('!!!')
-    // this.dataServise.addTodo(new Todo(form.value.text))
-   
+      form.reset() // clear input
+      this.showValidationErrors = false
+    } else this.showValidationErrors = true
+
+  }
+  
+  toggleComplited(todo: Todo){
+    todo.completed = !todo.completed
   }
 
 }
