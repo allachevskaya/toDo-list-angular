@@ -1,4 +1,9 @@
+
+import { DATE_PIPE_DEFAULT_TIMEZONE } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { DataService } from '../shared/data.service';
+import { Todo } from '../shared/todo.modul';
 
 @Component({
   selector: 'app-todos',
@@ -6,10 +11,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./todos.component.scss']
 })
 export class TodosComponent implements OnInit {
+  todos:Todo[]=[]
 
-  constructor() { }
+  constructor(private dataServise: DataService) { }
 
   ngOnInit(): void {
+    this.todos = this.dataServise.getAllTodos()
+  }
+  onFormSubmit(form:NgForm){
+    if(form.valid){
+      this.dataServise.addTodo(new Todo(form.value.text))
+    }else console.log(form)
+    // if(form.invalid) return alert('!!!')
+    // this.dataServise.addTodo(new Todo(form.value.text))
+   
   }
 
 }

@@ -1,23 +1,35 @@
 <section class="heading-section">
   <h1 class="title is-1 has-text-centered">Todos</h1>
-  <h1>1.06</h1>
+  <h1>1.28</h1>
 
 </section>
 
 <div class="container">
   <div class="add-todo-box">
-    <form>
+    <form #form="ngForm" (ngSubmit)="onFormSubmit(form)">
       <h2 class="title is-5">New ToDo</h2>
-      <div class="field is-grouped">
+      <div class="field is-grouped" style="margin: 0;">
         <p class="control is-expanded">
-          <input class="input" type="text" placeholder="Write new task...">
+          <input 
+          class="input"
+            minlength="3" 
+            required type="text" 
+            placeholder="Write new task..." 
+            ngModel name="text"
+            #todoTextField="ngModel"
+            >
         </p>
         <p class="control">
-          <a class="button ">
-            Add
-          </a>
+          <button class="button " type="submit">
+            <i class="material-icons">add</i>add
+          </button>
         </p>
       </div>
+      <div *ngIf="todoTextField.errors">
+        <p class="help is-danger" *ngIf="todoTextField.errors?.['required']" >Todo text  must not be empty</p>
+        <p class="help is-danger" *ngIf="todoTextField.errors?.['minlength']">Todo text  must not be lenght 3</p>
+      </div>
+      
     </form>
   </div>
 </div>
@@ -26,15 +38,20 @@
   <div class="container">
     <div class="todos-list">
 
-      <div class="todo-item complited">
+      <div class="todo-item " *ngFor="let todo of todos" [class.complited]="todo.completed">
         <div class="check-box">
           <i class="material-icons">check</i>
         </div>
-          <div class="todo-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, officiis neque modi reiciendis dolores cum ab, assumenda nobis, voluptatum ipsam nesciunt repellat hic vel exercitationem optio omnis cumque voluptatibus odit.
-          </div>
-        
+        <div class="todo-text">
+          {{todo.text}}
+        </div>
+        <div class="todo-control-button">
+          <i class="material-icons">edit</i>
+          <i class="material-icons">delete</i>
+        </div>
+
       </div>
-      <div class="todo-item">
+      <!-- <div class="todo-item">
         <div class="check-box">
           <i class="material-icons">check</i>
         </div>
@@ -47,8 +64,8 @@
             </div>
           </div>
         
-      </div>
-      
+      </div> -->
+
     </div>
   </div>
 </section>
