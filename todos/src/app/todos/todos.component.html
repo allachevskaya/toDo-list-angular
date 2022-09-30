@@ -1,6 +1,6 @@
 <section class="heading-section">
   <h1 class="title is-1 has-text-centered">Todos</h1>
-  <h1>2.29</h1>
+  <h1>2.34</h1>
 
 </section>
 
@@ -39,9 +39,10 @@
     <div class="todos-list">
 
       <app-todo-item
-       *ngFor="let todo of todos" 
+       *ngFor="let todo of todos;" 
       [task]='todo'
       (todoClicked)="togglecompleted(todo)"
+      (todoEdit)="editTodo(todo)"
       ></app-todo-item>
 
 

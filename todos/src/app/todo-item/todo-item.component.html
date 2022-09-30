@@ -9,7 +9,7 @@
     {{task.text}}
   </div>
   <div class="todo-control-button" (click)="$event.stopPropagation()">
-    <i class="material-icons">edit</i>
+    <i class="material-icons" (click)="onEditClick()">edit</i>
     <i class="material-icons">delete</i>
   </div>
 

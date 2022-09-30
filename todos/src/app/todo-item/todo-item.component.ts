@@ -8,14 +8,18 @@ import { Todo } from '../shared/todo.modul';
 })
 export class TodoItemComponent implements OnInit {
   @Input() task: Todo = new Todo('')
-  @Output() todoClicked :EventEmitter<void> = new EventEmitter()
+  @Output() todoClicked: EventEmitter<void> = new EventEmitter()
+  @Output() todoEdit: EventEmitter<void> = new EventEmitter()
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  onClickTodo(){
+  onClickTodo() {
     this.todoClicked.emit()
+  }
+  onEditClick() {
+    this.todoEdit.emit()
   }
 }

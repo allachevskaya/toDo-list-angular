@@ -6,18 +6,26 @@ import { AppComponent } from './app.component';
 import { TodosComponent } from './todos/todos.component';
 import { FormsModule } from '@angular/forms';
 import { TodoItemComponent } from './todo-item/todo-item.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { MatDialogModule} from '@angular/material/dialog';
+import { EditToDoDialogComponent } from './edit-to-do-dialog/edit-to-do-dialog.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     TodosComponent,
-    TodoItemComponent
+    TodoItemComponent,
+    EditToDoDialogComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    MatDialogModule
+   
   ],
   providers: [],
   bootstrap: [AppComponent]
