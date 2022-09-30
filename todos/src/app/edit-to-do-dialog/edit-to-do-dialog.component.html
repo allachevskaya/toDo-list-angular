@@ -2,7 +2,18 @@
 <div mat-dialog-content>
   <form #form="ngForm" (ngSubmit)="onFormSubmit(form)">
     <div class="field">
-      <input type="text" class="input" placeholder="edit todo">
+      <input type="text" class="input" 
+        placeholder="edit todo"
+        [ngModel]="todo.text" 
+        name="text" 
+        minlength="3" 
+        required type="text" 
+        type="text"
+         #todoTextField="ngModel">
+    </div>
+    <div *ngIf="todoTextField.invalid">
+      <p class="help is-danger" *ngIf="todoTextField.errors?.['required']">Поле не должно быть пустым</p>
+      <p class="help is-danger" *ngIf="todoTextField.errors?.['minlength']">Задача должна быть длиннее чем 3 символа</p>
     </div>
     <br>
     <div class="field is-grouped is-grouped-right">
@@ -10,9 +21,11 @@
         <button type="button" class="button is-light" (click)="close()">Cancel</button>
       </div>
       <div class="control">
-        <button type="submit" class="button is-my-color" >Save</button>
+        <button type="submit" class="button is-my-color" (click)="save()">Save</button>
       </div>
     </div>
+
+
 
   </form>
 </div>
