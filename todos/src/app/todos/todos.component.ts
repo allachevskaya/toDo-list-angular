@@ -18,7 +18,7 @@ export class TodosComponent implements OnInit {
   todos: Todo[] = []
   showValidationErrors: boolean = false
 
-  constructor(private dataServise: DataService, private dialog:MatDialog) { }
+  constructor(private dataServise: DataService, private dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.todos = this.dataServise.getAllTodos()
@@ -31,21 +31,28 @@ export class TodosComponent implements OnInit {
     } else this.showValidationErrors = true
 
   }
-  
-  togglecompleted(todo: Todo){
+
+  togglecompleted(todo: Todo) {
     todo.completed = !todo.completed
   }
-  editTodo(todo:Todo){
-    //this.dataServise.updateTodo()
-     const index = this.todos.indexOf(todo)
-    let dialogRef = this.dialog.open(EditToDoDialogComponent,{width:'600px', data:todo});
 
-    dialogRef.afterClosed().subscribe((result)=>{
-      if (result){
-        this.dataServise.updateTodo(index,result)
+  editTodo(todo: Todo) {
+    //this.dataServise.updateTodo()
+    const index = this.todos.indexOf(todo)
+    let dialogRef = this.dialog.open(EditToDoDialogComponent, { width: '600px', data: todo });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result) {
+        this.dataServise.updateTodo(index, result)
       }
     })
-    
   }
+
+  todoRemove(todo:Todo){
+    const index = this.todos.indexOf(todo)
+    this.dataServise.deleteTodo(index)
+  }
+
+
 
 }

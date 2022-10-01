@@ -24,6 +24,6 @@ export class DataService {
   }
 
   deleteTodo(index:number){
-    this.todos.slice(index,1)
+    this.todos.splice(index,1)
   }
 }

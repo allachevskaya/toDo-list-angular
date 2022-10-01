@@ -12,8 +12,8 @@
          #todoTextField="ngModel">
     </div>
     <div *ngIf="todoTextField.invalid">
-      <p class="help is-danger" *ngIf="todoTextField.errors?.['required']">Поле не должно быть пустым</p>
-      <p class="help is-danger" *ngIf="todoTextField.errors?.['minlength']">Задача должна быть длиннее чем 3 символа</p>
+      <p class="help is-danger" *ngIf="todoTextField.errors?.['required']">The field must not be empty</p>
+      <p class="help is-danger" *ngIf="todoTextField.errors?.['minlength']">The task should be longer</p>
     </div>
     <br>
     <div class="field is-grouped is-grouped-right">
