@@ -1,10 +1,9 @@
 <section class="heading-section">
   <h1 class="title is-1 has-text-centered">Todos</h1>
-  <h1>2.49</h1>
 
 </section>
 
-<div class="container">
+<div class="container add-todo-sticy">
   <div class="add-todo-box">
     <form #form="ngForm" (ngSubmit)="onFormSubmit(form)">
       <h2 class="title is-5">New ToDo</h2>
@@ -44,6 +43,7 @@
       (todoClicked)="togglecompleted(todo)"
       (todoEdit)="editTodo(todo)"
       (todoRemove)="todoRemove(todo)"
+      
       
       ></app-todo-item>
 

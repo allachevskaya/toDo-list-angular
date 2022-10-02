@@ -33,7 +33,20 @@ export class TodosComponent implements OnInit {
   }
 
   togglecompleted(todo: Todo) {
-    todo.completed = !todo.completed
+    todo.completed = !todo.completed;
+    if (todo.completed === true) {
+      let isDone = confirm("Task is done?");
+      
+      if (isDone === true ) {
+        alert('Your task will be completed in 3 seconds');
+        setTimeout(() => {
+          this.todoRemove(todo)
+        }, 3000);
+      }
+
+    }
+
+
   }
 
   editTodo(todo: Todo) {
@@ -48,7 +61,7 @@ export class TodosComponent implements OnInit {
     })
   }
 
-  todoRemove(todo:Todo){
+  todoRemove(todo: Todo) {
     const index = this.todos.indexOf(todo)
     this.dataServise.deleteTodo(index)
   }
